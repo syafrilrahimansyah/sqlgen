@@ -59,12 +59,14 @@ class Config extends CI_Controller {
 			}
 			else
 			{
+				date_default_timezone_set('Asia/Jakarta');
 				$this->load->model('Extractor');
 				$query_id = $this->Extractor->query($name);
 				$data = [
 					'id' => $tmplt_id,
 					'name' => $name,
 					'queries' => implode(',',$query_id),
+					'created' => date('Y-m-d H:i:s')
 				];
 				$this->db->insert('template',$data);
 				redirect(base_url('Config/template'));
@@ -101,6 +103,8 @@ class Config extends CI_Controller {
 			}
 			else
 			{
+				//get date
+				$created = $this->db->get_where('template',['id'=>$tmplt_id])->row()->created;
 				//deletion
 				$queries = $this->db->get_where('template',['id'=>$tmplt_id])->row()->queries;
 				$queries = explode(',',$queries);
@@ -117,6 +121,7 @@ class Config extends CI_Controller {
 					'id' => $tmplt_id,
 					'name' => $name,
 					'queries' => implode(',',$query_id),
+					'created' => $created
 				];
 				$this->db->insert('template',$data);
 				redirect(base_url('Config/template'));
