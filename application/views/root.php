@@ -8,8 +8,8 @@
         <meta name="author" content="" />
         <title>Telkomsel | SQL generator</title>
         <link href="<?php echo base_url()?>assets/css/styles.css" rel="stylesheet" />
-        <link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet" crossorigin="anonymous" />
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.min.js" crossorigin="anonymous"></script>
+        <link href="<?php echo base_url()?>assets/dataTables.bootstrap4.min.css" rel="stylesheet" crossorigin="anonymous" />
+        <script src="<?php echo base_url()?>assets/all.min.js" crossorigin="anonymous"></script>
     </head>
     <body class="sb-nav-fixed">
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
@@ -89,14 +89,14 @@
 
             
         </div>
-        <script src="https://code.jquery.com/jquery-3.4.1.min.js" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+        <script src="<?php echo base_url()?>assets/jquery-3.4.1.min.js" crossorigin="anonymous"></script>
+        <script src="<?php echo base_url()?>assets/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
         <script src="<?php echo base_url()?>assets/js/scripts.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
+        <script src="<?php echo base_url()?>assets/Chart.min.js" crossorigin="anonymous"></script>
         <script src="<?php echo base_url()?>assets/assets/demo/chart-area-demo.js"></script>
         <script src="<?php echo base_url()?>assets/assets/demo/chart-bar-demo.js"></script>
-        <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js" crossorigin="anonymous"></script>
-        <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js" crossorigin="anonymous"></script>
+        <script src="<?php echo base_url()?>assets/jquery.dataTables.min.js" crossorigin="anonymous"></script>
+        <script src="<?php echo base_url()?>assets/dataTables.bootstrap4.min.js" crossorigin="anonymous"></script>
         <script src="<?php echo base_url()?>assets/assets/demo/datatables-demo.js"></script>
     </body>
 </html>
