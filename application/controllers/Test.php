@@ -76,4 +76,11 @@ class Test extends CI_Controller {
         }
         print_r($file);
     }
+    public function tmpltxt()
+    {
+        $file = file('./file/test.txt');
+        foreach($file as $row){
+            echo $row;
+        }
+    }
 }

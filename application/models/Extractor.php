@@ -42,16 +42,16 @@ class Extractor extends CI_Model {
     }
     public function query($name)
     {
-        $file = file('./file/template/'.$name.'.csv');
+        $file = file('./file/template/'.$name.'.txt');
         foreach($file as $row){
             $id = uniqid('query-');
-            $row = explode(';',$row);
+            $row = explode('~',$row);
             $data = [
                 'row_id' => $id,
                 'param' => $row[1],
                 'loop_opt' => (isset($row[2]))?$row[2]:'',
                 'col_ch' => (isset($row[3]))?trim($row[3]):'',
-                'query' => $row[0].';'
+                'query' => $row[0]
             ];
             $this->db->insert('query',$data);
             $query_id[] = $id;

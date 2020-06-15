@@ -47,7 +47,7 @@ class Config extends CI_Controller {
 			redirect(base_url('Config/alert/name/'.$name));
 		}else{
 			$config['upload_path']      = './file/template';
-			$config['allowed_types']    = 'csv';
+			$config['allowed_types']    = 'txt';
 			$config['file_name'] 		= $name;
 			
 			$this->load->library('upload', $config);
@@ -90,7 +90,7 @@ class Config extends CI_Controller {
 			redirect(base_url('Config/alert/name/'.$name));
 		}else{
 			$config['upload_path']      = './file/template';
-			$config['allowed_types']    = 'csv';
+			$config['allowed_types']    = 'txt';
 			$config['file_name'] 		= $name;
 			$config['overwrite']    = TRUE;
 			
