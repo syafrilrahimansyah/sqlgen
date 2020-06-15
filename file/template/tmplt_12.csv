@@ -1,2 +1,0 @@
-Query2(%NAME%, %LOOP%);NAME|str,LOOP|str;col,LOOP;LOOP
-Query2(%NAME%, %CONTENT%);NAME|str,CONTENT|str;;

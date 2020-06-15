@@ -144,7 +144,7 @@ class Config extends CI_Controller {
 	public function download($tmplt)
 	{
 		$this->load->helper('download');
-        force_download('./file/template/'.$tmplt.'.csv', NULL);
+        force_download('./file/template/'.$tmplt.'.txt', NULL);
         //redirect(base_url().'/Config/template/');
 	}
 	public function alert($type,$value){
