@@ -1,0 +1,3 @@
+default_name;PRICEPLAN_ID;CID;RELATION;CHILD
+1;pid1;11;test1,test2,test3;ch1,ch2
+2;pid2;22;test4,test5;ch1,ch2,ch3

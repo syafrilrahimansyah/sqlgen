@@ -35,23 +35,26 @@ class Generatorx extends CI_Model {
 					//LOOP ON
 					else{
 						$loop_opt = explode(',',$row_query->loop_opt);
-						$col_ch = $row_query->col_ch;
+						$col_ch = explode(',',$row_query->col_ch);
 						switch($loop_opt[0]){
 							case 'col':
 								$loop_value = explode(',',$this->db->get_where('extract',['data_id'=>$data_id,'name'=>$loop_opt[1]])->row()->value);
 								
+								$loop_index = 0;
 								foreach($loop_value as $value_ch){
 									$query_result[$qry_idx] = $row_query->query;
 									foreach($param as $name){
 										$name = explode('|',$name);
-										if($name[0]==$col_ch){
-											$value = $value_ch;
+										if(in_array($name[0],$col_ch)){
+											$multi_val_ch = explode(',',$this->db->get_where('extract',['data_id'=>$data_id,'name'=>$name[0]])->row()->value);
+											$value = (isset($multi_val_ch[$loop_index]))?$multi_val_ch[$loop_index]:'';
 										}else{
 											$value = $this->db->get_where('extract',['data_id'=>$data_id,'name'=>$name[0]])->row()->value;
 										}
 										$query_result[$qry_idx] = str_replace('%'.trim($name[0]).'%',$value,$query_result[$qry_idx]);
 									}
 									$qry_idx += 1;
+									$loop_index += 1;
 								}
 							break;
 							case 'num':
